@@ -1,0 +1,125 @@
+site_policy:
+  archetype: marketing
+  locales:
+    - en
+  accessibility:
+    wcag_2_2_aa: true
+    min_contrast: 4.5
+    focus_visible: true
+    skip_links: true
+    aria_labels: true
+    alt_text_required: true
+    reduced_motion_support: true
+    keyboard_navigation: true
+  performance_budgets:
+    lcp_ms: 2500
+    cls: 0.1
+    inp_ms: 200
+    ttfb_ms: 800
+    fcp_ms: 1800
+    lighthouse_min_scores:
+      performance: 90
+      accessibility: 95
+      best_practices: 95
+      seo: 95
+  seo:
+    canonical: true
+    json_ld:
+      - Website
+      - Breadcrumb
+      - FAQ
+    og_cards: true
+    twitter_cards: true
+    sitemap: true
+    robots: true
+    meta_descriptions: true
+    structured_data: true
+    clean_urls: true
+    hreflang: true
+  pwa:
+    enabled: true
+    manifest: true
+    service_worker: true
+    offline_shell_routes:
+      - /
+      - /about
+      - /contact
+    install_prompt: engagement_based
+    cache_strategy: stale_while_revalidate
+  security_headers:
+    csp: >-
+      default-src 'self'; script-src 'self' 'nonce-{auto}'; style-src 'self' 'unsafe-inline'; img-src 'self' data:
+      https:; font-src 'self' https:; connect-src 'self' https:; object-src 'none'; base-uri 'self'; frame-ancestors
+      'none';
+    hsts: true
+    x_content_type_options: nosniff
+    x_frame_options: DENY
+    referrer_policy: strict-origin-when-cross-origin
+    permissions_policy:
+      - camera=()
+      - microphone=()
+      - geolocation=(self)
+      - payment=()
+  analytics:
+    provider: privacy_first
+    consent_required: true
+    dnt_respect: true
+    data_minimization: true
+    cookie_consent: geo_aware
+  observability:
+    error_tracking: true
+    performance_monitoring: true
+    rum_vitals: true
+    uptime_monitoring: false
+    lighthouse_ci: true
+  legal_pages:
+    - privacy
+    - terms
+    - cookies
+    - accessibility
+    - contact
+  defaults:
+    dark_mode: system
+    reduced_motion: true
+    responsive_images: true
+    lazy_loading: true
+    form_validation: real_time
+    form_spam_protection:
+      - honeypot
+      - rate_limit
+      - server_validation
+    loading_states: skeleton
+    empty_states: true
+    error_boundaries: true
+    toast_notifications: true
+  content:
+    no_lorem_ipsum: true
+    industry_specific: true
+    readability_grade: 8
+    professional_tone: true
+    call_to_actions: true
+    varied_content_length: true
+  design_system:
+    tokenized: true
+    color_psychology: true
+    glassmorphism: true
+    gradient_backgrounds: true
+    micro_interactions: true
+    premium_shadows: true
+    responsive_typography: true
+    component_library: true
+  navigation:
+    auto_generate: true
+    breadcrumbs: true
+    global_search: true
+    mobile_optimized: true
+    consistent_header_footer: true
+  features:
+    newsletter_signup: true
+    social_sharing: true
+    testimonials: true
+    pricing_tables: false
+    blog_integration: false
+    search_functionality: true
+    contact_forms: true
+    feedback_widget: true
